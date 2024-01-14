@@ -6,10 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class DelesBlogApplicationTests {
-
-//    @Test
-//    void contextLoads() {
-//        Assertions.assertEquals(1, 1);
-//    }
+    @Test
+  void contextLoads() {
+        Assertions.assertEquals(1, 1);
+   }
 
 }
