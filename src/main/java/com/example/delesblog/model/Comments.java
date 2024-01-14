@@ -28,7 +28,7 @@ public class Comments {
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private Users user;
+    private User user;
 
     @Column(name = "commentDate")
     @Temporal(TemporalType.TIMESTAMP)

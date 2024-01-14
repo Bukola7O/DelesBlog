@@ -1,7 +1,8 @@
 package com.example.delesblog.serviceImpl;
 
 import com.example.delesblog.model.Comments;
-import com.example.delesblog.model.Users;
+import com.example.delesblog.model.BlogPost;
+import com.example.delesblog.model.User;
 import com.example.delesblog.repository.CommentRepository;
 import com.example.delesblog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,10 @@ public class CommentServiceImpl {
 
 
     public ResponseEntity<Comments> saveComment(Long userId, Comments newComment) {
-        Optional<Users> user = userRepository.findById(userId);
+        Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
-            Users createdUsers = user.get();
-            newComment.setUser(createdUsers);
+            User createdBlogPost = user.get();
+            newComment.setUser(createdBlogPost);
             newComment.setContent(newComment.getContent());
             commentRepository.save(newComment);
             return new ResponseEntity<>(newComment, HttpStatus.CREATED);
